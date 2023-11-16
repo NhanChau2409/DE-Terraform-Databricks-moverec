@@ -20,16 +20,6 @@ EOT
   default     = "standard" # Case sensitive
 }
 
-#variable "TENANT_ID" {
-#  description = "The Azure tenant id"
-#  type        = string
-#}
-#
-#variable "SUBSCRIPTION_ID" {
-#  description = "The Azure subscription id"
-#  type        = string
-#}
-
 variable "storage-account-tier" {
   description = <<EOT
     (Optional) The tier of storage account"
@@ -39,3 +29,13 @@ EOT
   type        = string
   default     = "Standard" # Case sensitive
 }
+
+#variable "TENANT_ID" {
+#  description = "The Azure tenant id"
+#  type        = string
+#}
+#
+#variable "SUBSCRIPTION_ID" {
+#  description = "The Azure subscription id"
+#  type        = string
+#}

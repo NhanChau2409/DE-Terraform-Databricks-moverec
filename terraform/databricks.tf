@@ -28,7 +28,7 @@ resource "databricks_cluster" "this" {
 
   autoscale {
     min_workers = 1
-    max_workers = 10
+    max_workers = 4
   }
 }
 
