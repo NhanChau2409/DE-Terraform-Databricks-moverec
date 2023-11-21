@@ -29,13 +29,3 @@ EOT
   type        = string
   default     = "Standard" # Case sensitive
 }
-
-#variable "TENANT_ID" {
-#  description = "The Azure tenant id"
-#  type        = string
-#}
-#
-#variable "SUBSCRIPTION_ID" {
-#  description = "The Azure subscription id"
-#  type        = string
-#}

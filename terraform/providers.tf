@@ -9,17 +9,31 @@ terraform {
       source  = "databricks/databricks"
       version = "=1.29.0"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.5.1"
+    }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "2.46.0"
+    }
+    time = {
+      source  = "hashicorp/time"
+      version = "0.9.1"
+    }
 
   }
+
 }
 
 provider "azurerm" {
   features {}
-  #  subscription_id = var.SUBSCRIPTION_ID
-  #  tenant_id       = var.TENANT_ID
 }
 
 provider "databricks" {
   # Authenticate through Azure CLI
-  host = azurerm_databricks_workspace.this.workspace_url
+  host                        = azurerm_databricks_workspace.this.workspace_url
+  azure_workspace_resource_id = azurerm_databricks_workspace.this.id
 }
+
+provider "random" {}

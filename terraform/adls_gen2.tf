@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "this" {
-  name                     = "${var.project}storageaccount"
+  name                     = "${var.project}strgacc"
   resource_group_name      = azurerm_resource_group.this.name
   location                 = azurerm_resource_group.this.location
   account_tier             = var.storage-account-tier
@@ -11,5 +11,4 @@ resource "azurerm_storage_account" "this" {
 resource "azurerm_storage_container" "this" {
   name                  = "${var.project}-container"
   storage_account_name  = azurerm_storage_account.this.name
-  container_access_type = "private"
 }
