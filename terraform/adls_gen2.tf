@@ -9,6 +9,6 @@ resource "azurerm_storage_account" "this" {
 }
 
 resource "azurerm_storage_container" "this" {
-  name                  = "${var.project}-container"
-  storage_account_name  = azurerm_storage_account.this.name
+  name                 = "${var.project}-container"
+  storage_account_name = azurerm_storage_account.this.name
 }

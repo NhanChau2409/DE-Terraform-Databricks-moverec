@@ -3,26 +3,28 @@
 - [movrec IaC](#movrec-iac)
     - [Description](#description)
     - [Requirements](#requirements)
-    - [Initialization](#initialization)
     - [Troubleshooting](#troubleshooting)
+    - [Run](#run)
 
 ### Description
 
-In this project, I utilize Terraform to create cloud resources, [Databricks](https://www.databricks.com/) and [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) (act as datalake gen 2),
-and establish their connections within Azure.
+Infrastructure as Code (IaC) with Terraform simplifies and automates the process of provisioning and managing Azure
+resources,
+Identity and Access Management (IAM), and other aspects of your cloud infrastructure. This guide outlines the steps to
+leverage Terraform for creating and managing Azure resources efficiently.
 
 ### Requirements
 
 - [Azure account](https://azure.microsoft.com/en-us/free/search/?ef_id=_k_Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB_k_&OCID=AIDcmmftanc7uz_SEM__k_Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB_k_&gad_source=1&gclid=Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB)
-  to use services
+  to access and utilize Azure services.
+
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
-  to automatically construct and manage services.
+  installed on your local machine to define and manage infrastructure as code.
+
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
-  to authenticate and authorize Terraform to act on behalf of an Azure account
+  to authenticate and authorize Terraform to interact with Azure on your behalf.
 
-### Configuration
-
-### Initialization
+### Run
 
 Change the current working directory to the [terraform folder](.):
 
@@ -30,11 +32,34 @@ Change the current working directory to the [terraform folder](.):
 $ cd ./terraform
 ```
 
-Run [initialization scripts](init-azure.sh) for construct services:
+Login into your Azure account through Azure CLI:
 
 ```bash
-$ ./init-azure.sh
+$ az login
 ```
+
+Initialize Terraform:
+
+```bash
+$ terraform init
+```
+
+Run Terraform planning:
+
+```bash
+$ terraform plan
+```
+
+Execute plan if there is no error:
+
+```bash
+$ terraform apply
+```
+
+### Configuration
+
+- Create your own `tfvars` files under [vars](./vars) folder
+- Pass these variable files into the `-var-file` flag when executing Terraform commands.
 
 ### Troubleshooting
 

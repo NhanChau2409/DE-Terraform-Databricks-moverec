@@ -37,16 +37,16 @@ output "databricks_workspace_service_principal_id" {
 }
 
 output "databricks_mount_name" {
-  value = databricks_mount.this.name
+  value       = databricks_mount.this.name
   description = "Mount point name from ADLS gen 2 Storage"
 }
 
 output "adls_gen_2_account_display_name" {
-  value = azurerm_storage_account.this.name
+  value       = azurerm_storage_account.this.name
   description = "ADLS gen 2 storage account"
 }
 
 output "adls_gen_2_container_display_name" {
-  value = azurerm_storage_container.this.name
+  value       = azurerm_storage_container.this.name
   description = "ADLS gen 2 storage account"
 }
