@@ -163,3 +163,4 @@ cython_debug/
 /terraform/vars/dev.tfvars
 /terraform/terraform.tfstate
 /terraform/terraform.tfstate.backup
+/databricks/scripts/sample/
