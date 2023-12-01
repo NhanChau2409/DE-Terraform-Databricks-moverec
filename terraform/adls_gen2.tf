@@ -12,3 +12,14 @@ resource "azurerm_storage_container" "this" {
   name                 = "${var.project}-container"
   storage_account_name = azurerm_storage_account.this.name
 }
+
+resource "azurerm_storage_data_lake_gen2_filesystem" "this" {
+  name               = "this"
+  storage_account_id = azurerm_storage_account.this.id
+}
+resource "azurerm_storage_data_lake_gen2_path" "raw" {
+  path               = "raw"
+  filesystem_name    = azurerm_storage_data_lake_gen2_filesystem.this.name
+  storage_account_id = azurerm_storage_account.this.id
+  resource           = "directory"
+}
