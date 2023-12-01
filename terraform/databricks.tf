@@ -43,6 +43,12 @@ resource "databricks_mount" "this" {
   }
 }
 
+resource "databricks_secret" "tmdb_api_key" {
+  key          = "tmdb_api_key"
+  string_value = var.apikey
+  scope        = databricks_secret_scope.terraform.name
+}
+
 resource "databricks_cluster" "this" {
   spark_version           = "13.3.x-scala2.12"
   runtime_engine          = "PHOTON"
