@@ -1,10 +1,10 @@
-# Analysis of Trending Movies
+# Movie Status Tracking and Ranking Project
 
 ## Description
 
-This project focuses on storing the status (rating, votes, popularity) of movies, ranking them, and generating weekly
-reports. The solution utilizes Databricks for building the ETL pipeline, Terraform for infrastructure setup on the Azure
-cloud platform, and PowerBI for visualization.
+This project is designed to efficiently store and manage the status of movies, including ratings, votes, and popularity.
+The solution leverages a robust tech stack, integrating Databricks for ETL pipeline development, Terraform for
+infrastructure provisioning on the Azure cloud platform, and PowerBI for visualization.
 
 ## High level Architecture
 
@@ -25,10 +25,14 @@ cloud platform, and PowerBI for visualization.
     - Terraform is used for automatic setup of infrastructure.
     - Job schedules are configured as part of the automated setup.
 
+## Run
+
+Follow instructions in `terraform` [README.md](./terraform/README.md)
+
 ## Lessons Learned
 
-- First-time use of Terraform for infrastructure setup
-- Implementation of Star Schema design for the database
-- Utilization of PowerBI for visualization
-- Leveraging Delta Lake in Databricks for a lakehouse and implementing Medallion Architecture
-- Polishing job scheduling in Databricks
+- First-time use of **_Terraform_** for infrastructure setup
+- Implementation of **_Star Schema design_** for the database
+- Utilization of **_PowerBI_** for visualization
+- Leveraging Delta Lake in Databricks for a lakehouse and implementing **_Medallion Architecture_**
+- Apply **_job scheduling_** in Databricks
