@@ -1,19 +1,36 @@
-# movrec IaC
+# Automating Azure Infrastructure with Terraform
 
 - [movrec IaC](#movrec-iac)
     - [Description](#description)
+    - [Terraform workflow](#terraform-workflow)
     - [Requirements](#requirements)
-    - [Troubleshooting](#troubleshooting)
     - [Run](#run)
+    - [Configuration](#configuration)
+    - [Troubleshooting](#troubleshooting)
 
-### Description
+## Description
 
-Infrastructure as Code (IaC) with Terraform simplifies and automates the process of provisioning and managing Azure
-resources,
-Identity and Access Management (IAM), and other aspects of your cloud infrastructure. This guide outlines the steps to
+Infrastructure as Code (IaC) with Terraform simplifies and automates the process of:
+
+- provisioning and managing Azure
+  resources,
+- Identity and Access Management (IAM)
+- other aspects of your cloud infrastructure
+
+This guide outlines the steps to
 leverage Terraform for creating and managing Azure resources efficiently.
 
-### Requirements
+## Terraform Workflow
+
+- Create storage account and Databricks resources
+- Establish a service principal for Databricks, assigning it the Blob Storage Contributor role
+- Configure Databricks secrets
+- Set up clusters with associated libraries
+- Create mount points
+- Develop Notebooks with source code
+- Schedule Jobs
+
+## Requirements
 
 - [Azure account](https://azure.microsoft.com/en-us/free/search/?ef_id=_k_Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB_k_&OCID=AIDcmmftanc7uz_SEM__k_Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB_k_&gad_source=1&gclid=Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB)
   to access and utilize Azure services.
@@ -24,7 +41,7 @@ leverage Terraform for creating and managing Azure resources efficiently.
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
   to authenticate and authorize Terraform to interact with Azure on your behalf.
 
-### Run
+## Run
 
 Change the current working directory to the [terraform folder](.):
 
@@ -56,12 +73,12 @@ Execute plan if there is no error:
 $ terraform apply
 ```
 
-### Configuration
+## Configuration
 
 - Create your own `tfvars` files under [vars](./vars) folder
 - Pass these variable files into the `-var-file` flag when executing Terraform commands.
 
-### Troubleshooting
+## Troubleshooting
 
 - `Quotas limit error`
     - Request a quotas increase
