@@ -1,13 +1,5 @@
 # Automating Azure Infrastructure with Terraform
 
-- [movrec IaC](#movrec-iac)
-    - [Description](#description)
-    - [Terraform workflow](#terraform-workflow)
-    - [Requirements](#requirements)
-    - [Run](#run)
-    - [Configuration](#configuration)
-    - [Troubleshooting](#troubleshooting)
-
 ## Description
 
 Infrastructure as Code (IaC) with Terraform simplifies and automates the process of:
@@ -20,16 +12,6 @@ Infrastructure as Code (IaC) with Terraform simplifies and automates the process
 This guide outlines the steps to
 leverage Terraform for creating and managing Azure resources efficiently.
 
-## Terraform Workflow
-
-- Create storage account and Databricks resources
-- Establish a service principal for Databricks, assigning it the Blob Storage Contributor role
-- Configure Databricks secrets
-- Set up clusters with associated libraries
-- Create mount points
-- Develop Notebooks with source code
-- Schedule Jobs
-
 ## Requirements
 
 - [Azure account](https://azure.microsoft.com/en-us/free/search/?ef_id=_k_Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB_k_&OCID=AIDcmmftanc7uz_SEM__k_Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB_k_&gad_source=1&gclid=Cj0KCQiAmNeqBhD4ARIsADsYfTfCVwwbCl8gclCJU6wI8QcFbJkw_wNu30TydWg2mhETRF7ycss2a68aAj-FEALw_wcB)
@@ -40,6 +22,35 @@ leverage Terraform for creating and managing Azure resources efficiently.
 
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
   to authenticate and authorize Terraform to interact with Azure on your behalf.
+
+## Structure
+
+1. ### [providers.tf:](./providers.tf)
+    - Contains all the necessary provider configurations for Azure and Databricks.
+2. ### [main.tf:](./main.tf)
+    - Defines the creation of an **_Azure resource group_** and establishes a **_service principal_** for `Databricks`.
+
+3. ### [adls_gen2.tf:](adls_gen2.tf)
+    - Specifies the creation of a **_storage account_** for `Azure Data Lake Storage` (ADLS) Gen2 and its associated *
+      *_container_**.
+
+4. ### [databricks.tf:](databricks.tf)
+    * Sets up the Databricks **_workspace_**.
+    * Manages Databricks **_secrets_**.
+    * Assigns the `Blob Storage Contributor` role.
+    * Creates Databricks **_clusters_** with associated libraries.
+    * Establishes **_mount points_** between `Databricks` and `Azure Data Lake Gen2`.
+    * Develops notebooks with source code in the [databricks folder](../databricks).
+    * **_Schedules jobs_** for daily API requests and weekly data transformation.
+
+5. ### [variables.tf:](variables.tf)
+    - Declares variables used across the Terraform configuration.
+
+6. ### [outputs.tf:](outputs.tf)
+    - Defines useful outputs that will be displayed when the project is completed.
+
+7. ### [vars folder](./vars)
+    - Contains different `.tfvars` files to fit with various use cases.
 
 ## Run
 
