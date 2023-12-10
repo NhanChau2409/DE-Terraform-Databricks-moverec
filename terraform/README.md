@@ -25,31 +25,30 @@ leverage Terraform for creating and managing Azure resources efficiently.
 
 ## Structure
 
-1. ### [providers.tf:](./providers.tf)
+1. #### [providers.tf:](./providers.tf)
     - Contains all the necessary provider configurations for Azure and Databricks.
-2. ### [main.tf:](./main.tf)
-    - Defines the creation of an **_Azure resource group_** and establishes a **_service principal_** for `Databricks`.
+2. #### [main.tf:](./main.tf)
+    - Defines the creation of an **Azure resource group** and establishes a **service principal** for `Databricks`.
 
-3. ### [adls_gen2.tf:](adls_gen2.tf)
-    - Specifies the creation of a **_storage account_** for `Azure Data Lake Storage` (ADLS) Gen2 and its associated *
-      *_container_**.
+3. #### [adls_gen2.tf:](adls_gen2.tf)
+    - Specifies the creation of a **storage account** for `Azure Data Lake Storage` (ADLS) Gen2 and its associated **container**.
 
-4. ### [databricks.tf:](databricks.tf)
-    * Sets up the Databricks **_workspace_**.
-    * Manages Databricks **_secrets_**.
+4. #### [databricks.tf:](databricks.tf)
+    * Sets up the Databricks **workspace**.
+    * Manages Databricks **secrets**.
     * Assigns the `Blob Storage Contributor` role.
-    * Creates Databricks **_clusters_** with associated libraries.
-    * Establishes **_mount points_** between `Databricks` and `Azure Data Lake Gen2`.
+    * Creates Databricks **clusters** with associated libraries.
+    * Establishes **mount points** between `Databricks` and `Azure Data Lake Gen2`.
     * Develops notebooks with source code in the [databricks folder](../databricks).
-    * **_Schedules jobs_** for daily API requests and weekly data transformation.
+    * **Schedules jobs** for daily API requests and weekly data transformation.
 
-5. ### [variables.tf:](variables.tf)
+5. #### [variables.tf:](variables.tf)
     - Declares variables used across the Terraform configuration.
 
-6. ### [outputs.tf:](outputs.tf)
+6. #### [outputs.tf:](outputs.tf)
     - Defines useful outputs that will be displayed when the project is completed.
 
-7. ### [vars folder](./vars)
+7. #### [vars folder](./vars)
     - Contains different `.tfvars` files to fit with various use cases.
 
 ## Run
