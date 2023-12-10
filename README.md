@@ -7,9 +7,7 @@ The solution leverages a robust tech stack, integrating Databricks for ETL pipel
 infrastructure provisioning on the Azure cloud platform, and PowerBI for visualization.
 
 ## High level Architecture
-
-![high_level_workflow](./img/high_level_workflow.png)
-
+![high_level_workflow](https://github.com/NhanChau2409/movrec/assets/116027999/56b2da6b-1393-4039-a6c0-57526f0d70a5)
 - **Daily Data Fetch**:
     - Fetch raw data from TMDB API.
     - Store the data in Azure Data Lake Storage (ADLS) Gen 2.
