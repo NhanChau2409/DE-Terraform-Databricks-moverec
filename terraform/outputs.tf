@@ -46,7 +46,7 @@ output "adls_gen_2_account_display_name" {
   description = "ADLS gen 2 storage account"
 }
 
-output "adls_gen_2_container_display_name" {
-  value       = azurerm_storage_container.this.name
-  description = "ADLS gen 2 storage account"
+output "adls_gen_2_filesystem_display_name" {
+  value       = azurerm_storage_data_lake_gen2_filesystem.this.name
+  description = "ADLS gen 2 filesystem"
 }

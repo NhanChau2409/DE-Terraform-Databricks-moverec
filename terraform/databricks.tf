@@ -60,7 +60,7 @@ resource "databricks_mount" "this" {
     client_id              = azuread_service_principal.this.application_id
     client_secret_key      = databricks_secret.service_principal_key.key
     client_secret_scope    = databricks_secret_scope.terraform.name
-    container_name         = azurerm_storage_container.this.name
+    container_name         = azurerm_storage_data_lake_gen2_filesystem.this.name
     storage_account_name   = azurerm_storage_account.this.name
     initialize_file_system = true
   }
