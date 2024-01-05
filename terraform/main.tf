@@ -19,5 +19,4 @@ resource "time_rotating" "month" {
 
 resource "azuread_service_principal_password" "this" {
   service_principal_id = azuread_service_principal.this.object_id
-  rotate_when_changed  = { rotation = time_rotating.month.id }
 }
