@@ -10,6 +10,8 @@ resource "azurerm_databricks_workspace" "this" {
 resource "databricks_service_principal" "sp" {
   application_id = azuread_application.this.application_id
   display_name   = azuread_application.this.display_name
+
+  depends_on = [azuread_application.this, azurerm_databricks_workspace.this]
 }
 
 # Add CLIENT-SECRET into databricks secrets
@@ -48,8 +50,8 @@ resource "databricks_cluster" "this" {
     "PYSPARK_PYTHON" = "/databricks/python3/bin/python3"
   }
   autoscale {
-    max_workers = 4
-    min_workers = 2
+    max_workers = 2
+    min_workers = 1
   }
 }
 

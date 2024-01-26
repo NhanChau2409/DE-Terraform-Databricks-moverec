@@ -1,4 +1,5 @@
 data "databricks_current_user" "me" {
+  depends_on = [azurerm_databricks_workspace. this]
 }
 
 resource "databricks_notebook" "init_table_schema" {
@@ -18,7 +19,7 @@ resource "databricks_notebook" "fetch_weekly_meta_data" {
 
 resource "databricks_notebook" "etl_pipeline" {
   source = "../databricks/notebooks/etl_pipeline.sql"
-  path   = "${data.databricks_current_user.me.home}/weekly/etl_pipeline"
+  path   = "${data.databricks_current_user.me.home}/monthly/etl_pipeline"
 }
 
 resource "databricks_job" "once" {
@@ -65,7 +66,7 @@ resource "databricks_job" "weekly" {
     task_key            = "b"
     existing_cluster_id = databricks_cluster.this.id
     notebook_task {
-      notebook_path = "${data.databricks_current_user.me.home}/weekly/etl_pipeline"
+      notebook_path = "${data.databricks_current_user.me.home}/monthly/etl_pipeline"
     }
   }
 

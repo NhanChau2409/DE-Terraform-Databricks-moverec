@@ -19,10 +19,6 @@ CREATE TABLE IF NOT EXISTS status_fact (
 
 -- COMMAND ----------
 
-DROP TABLE status_fact;
-
--- COMMAND ----------
-
 CREATE TABLE IF NOT EXISTS gernes_dim (
   gerne_id INT NOT NULL,
   gerne STRING NOT NULL

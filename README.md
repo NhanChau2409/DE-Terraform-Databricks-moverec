@@ -1,4 +1,4 @@
-# Movie Status Tracking and Ranking Project
+# Movie Status Tracking and Ranking IaC Project
 
 ## Description
 
@@ -6,13 +6,19 @@ This project is designed to efficiently store and manage the status of movies, i
 The solution leverages a robust tech stack, integrating Databricks for ETL pipeline development, Terraform for
 infrastructure provisioning on the Azure cloud platform, and PowerBI for visualization.
 
+## Run
+
+Follow instructions in `terraform` folder [README.md](./terraform/README.md)
+
 ## High level Architecture
+
 ![high_level_workflow](https://github.com/NhanChau2409/movrec/assets/116027999/56b2da6b-1393-4039-a6c0-57526f0d70a5)
-- **Daily Data Fetch**:
+
+- **Daily & Weekly Data Fetch**:
     - Fetch raw data from TMDB API.
     - Store the data in Azure Data Lake Storage (ADLS) Gen 2.
 
-- **Weekly ETL Process**:
+- **Monthly ETL Process**:
     - Move data from ADLS Gen 2 to Databricks Delta Lake.
     - Transform, denormalize, and structure the data.
 
@@ -23,9 +29,17 @@ infrastructure provisioning on the Azure cloud platform, and PowerBI for visuali
     - Terraform is used for automatic setup of infrastructure.
     - Job schedules are configured as part of the automated setup.
 
-## Run
+## Details
 
-Follow instructions in `terraform` [README.md](./terraform/README.md)
+Follow instructions in `databricks` folder [README.md](./databricks/README.md)
+
+- Architecture structure
+- Code under the hood
+
+Follow instructions in `terraform` folder [README.md](./terraform/README.md)
+
+- Implementation of infrastructure as code.
+- Utilization of specified services.
 
 ## Lessons Learned
 
