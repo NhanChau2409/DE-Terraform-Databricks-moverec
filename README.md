@@ -11,8 +11,7 @@ infrastructure provisioning on the Azure cloud platform, and PowerBI for visuali
 Follow instructions in `terraform` folder [README.md](./terraform/README.md)
 
 ## High level Architecture
-
-![high_level_workflow](https://github.com/NhanChau2409/movrec/assets/116027999/56b2da6b-1393-4039-a6c0-57526f0d70a5)
+![high_level_workflow](https://github.com/NhanChau2409/movrec/assets/116027999/e1c022fb-4d8c-4b12-a979-84df6bbcde49)
 
 - **Daily & Weekly Data Fetch**:
     - Fetch raw data from TMDB API.
