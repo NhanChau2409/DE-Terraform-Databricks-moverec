@@ -1,4 +1,4 @@
-# Movie Status Project
+# CineTrack: Movie Status and Ranking System
 
 ## Description
 
