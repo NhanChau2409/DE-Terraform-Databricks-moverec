@@ -1,9 +1,8 @@
-# Movie Status Tracking and Ranking IaC Project
+# Movie Status Project
 
 ## Description
 
-This project is designed to efficiently store and manage the status of movies, including ratings, votes, and popularity. The solution leverages a robust tech stack, integrating Databricks for ETL pipeline development, Terraform for infrastructure provisioning on the Azure cloud platform, and PowerBI for visualization.
-
+This project is designed to efficiently store and manage the status of movies, including ratings, votes, and popularity. The solution leverages a robust tech stack, integrating **Databricks** for ETL pipeline development, **Terraform** for infrastructure provisioning on the **Azure** cloud platform.
 ## Project Highlights
 
 - **Fully Automated IaC**: Creates a comprehensive end-to-end data pipeline with only Azure credentials and **a single command**.
