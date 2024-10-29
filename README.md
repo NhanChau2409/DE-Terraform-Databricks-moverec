@@ -19,7 +19,8 @@ This project is designed to efficiently store and manage the status of movies, i
 
 ## High Level Architecture
 
-![high_level_workflow](https://github.com/NhanChau2409/movrec/assets/116027999/e1c022fb-4d8c-4b12-a979-84df6bbcde49)
+![datapipeline](https://github.com/user-attachments/assets/8e7f662b-0d48-46a5-9ecd-88f34871ddc6)
+
 
 ## Terraform
 
